@@ -12,13 +12,15 @@ class LegendEdit extends Component {
                     <label>Circle Color</label>
                     <input type="color" value={this.props.editValues.editColor} onChange={this.props.handleChangeEdit.bind(this, 'editColor')}/>
                 </div>
-                <div className="edit-delete">
-                    <button onClick={this.props.handleChangeEdit.bind(this, 'editDelete')}>Delete node</button>
-                </div>
+                <div className="edit-buttons-container">
+                    <div className="edit-delete">
+                        <button onClick={this.props.handleChangeEdit.bind(this, 'editDelete')}>Delete node</button>
+                    </div>
 
-                <div className="edit-z-index">
-                    <button onClick={this.props.handleChangeEdit.bind(this, 'editZIndexBF')}>Bring forward</button>
-                    <button onClick={this.props.handleChangeEdit.bind(this, 'editZIndexSB')}>Send Backwards</button>
+                    <div className="edit-z-index">
+                        <button onClick={this.props.handleChangeEdit.bind(this, 'editZIndexBF')}>Bring forward</button>
+                        <button onClick={this.props.handleChangeEdit.bind(this, 'editZIndexSB')}>Send Backwards</button>
+                    </div>
                 </div>
             </div>
         );

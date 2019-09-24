@@ -43,7 +43,7 @@ class Content extends Component {
                         <Legend changeMode={this.changeMode} mode={this.state.mode} handleChangeAdd={this.handleChangeAdd} handleChangeSelected={this.handleChangeSelected} addValues={this.state.addValues} editValues={this.state.editValues} gooeyIntensity={this.state.gooeyIntensity} handleChangeEdit={this.handleChangeEdit}></Legend>
                     </div>
                 </div>
-                {/* <Footer></Footer> */}
+                <Footer></Footer>
             </div>
         );
     }

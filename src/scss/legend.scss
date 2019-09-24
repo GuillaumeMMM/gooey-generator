@@ -5,13 +5,7 @@
     align-items: center;
     flex-direction: column;
     margin: 30px;
-    background-color: $color-tertiary;
     color: white;
-    border-radius: 7px;
-    -webkit-box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
-    -moz-box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
-    box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
-    padding: 30px;
     overflow: scroll;
 
     button {
@@ -36,6 +30,12 @@
 
     .gooey-intensity {
         width: 100%;
+        background-color: $color-tertiary;
+        -webkit-box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
+        -moz-box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
+        box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
+        padding: 30px;
+        border-radius: 7px;
 
         label {
             margin: 10px 0;
@@ -84,133 +84,143 @@
         }
     }
 
-    .legend-menu {
+    .inputs-container {
         width: 100%;
-        padding: 10px 0;
-        margin: 40px 0;
-        display: flex;
-        justify-content: flex-start;
-        color: $color-text-secondary;
+        background-color: $color-tertiary;
+        -webkit-box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
+        -moz-box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
+        box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
+        padding: 30px;
+        border-radius: 7px;
+        margin-top: 40px;
 
-        li {
-            cursor: pointer;
-            list-style: none;
-            display: inline-block;
-            padding: 2px 5px;
-            margin: 0 5px;
-
-            &.active {
-                color: white;
-                border: 1px solid $color-primary;
-                border-radius: 3px;
-            }
-        }
-    }
-
-    .legend-add, .legend-edit, .legend-save {
-        width: 100%;
-    }
-
-    .legend-add, .legend-edit {
-
-        label {
-            margin: 10px 0;
-            display: block;
-        }
-
-        .add-color-picker, .edit-color-picker {
-            margin: 30px 0;
-            input {
-                cursor: pointer;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                border: none;
-                background: none;
-            }
-
-            input[type="color"]:first-child {
-                padding: 0;
-                margin: 0;
-                border: none;
-                box-shadow: none;
-                border-radius: 100px;
-                background: none;
-              }
-              
-              input[type="color"]::-webkit-color-swatch-wrapper {
-                padding: 0;
-              }
-              
-              input[type="color"]::-webkit-color-swatch {
-                border: 2px solid white;
-                border-radius:4px;
-              }
-              
-              input[type="color"]:nth-child(2) {
-                padding: 0;
-                margin: 0;
-                border: none;
-                box-shadow: none;
-                border-radius: 100px;
-                background: #f0bc12;
-                outline: none;
-              }
-              
-              input[type="color" i] {
-                border-radius: 4px;
-                border: none;
-                height: 30px;
-                width: 50px;
-                display: block;
-              }
-        }
-    }
-
-    .legend-save {
-
-        label {
-            margin: 10px 0;
-            display: block;
-        }
-
-        .legend-save-size {
-            .legend-save-size-content {
-                display: flex;
-                width: 100%;
-                align-items: center;
+        .legend-menu {
+            width: 100%;
+            padding: 10px 0;
+            display: flex;
+            justify-content: flex-start;
+            color: $color-text-secondary;
     
-                input {
-                    -webkit-appearance: none;  /* Override default CSS styles */
-                    appearance: none;
-                    outline: none;
-                    border: none;
-                    border-bottom: 1px solid white;
-                    background-color: transparent;
-                    color: $color-secondary;
-                    font-size: 0.8em;
-                    width: 50px;
-                    margin-right: 20px;
+            li {
+                cursor: pointer;
+                list-style: none;
+                display: inline-block;
+                padding: 2px 5px;
+                margin: 0 5px;
+    
+                &.active {
+                    color: white;
+                    border: 1px solid $color-primary;
+                    border-radius: 3px;
                 }
             }
         }
-
-        .legend-save-crop {
-            margin: 30px 0;
-
+    
+        .legend-add, .legend-edit, .legend-save {
+            width: 100%;
+        }
+    
+        .legend-add, .legend-edit {
+    
             label {
-                display: inline-block;
-                margin-right: 20px;
+                margin: 10px 0;
+                display: block;
             }
-
-            input {
-                outline: none;
-                border: none;
-                background-color: $color-secondary;
-                width: 15px;
-                height: 15px;
-                border-radius: 3px;
-                cursor: pointer;
+    
+            .add-color-picker, .edit-color-picker {
+                margin: 30px 0;
+                input {
+                    cursor: pointer;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    border: none;
+                    background: none;
+                }
+    
+                input[type="color"]:first-child {
+                    padding: 0;
+                    margin: 0;
+                    border: none;
+                    box-shadow: none;
+                    border-radius: 100px;
+                    background: none;
+                  }
+                  
+                  input[type="color"]::-webkit-color-swatch-wrapper {
+                    padding: 0;
+                  }
+                  
+                  input[type="color"]::-webkit-color-swatch {
+                    border: 2px solid white;
+                    border-radius:4px;
+                  }
+                  
+                  input[type="color"]:nth-child(2) {
+                    padding: 0;
+                    margin: 0;
+                    border: none;
+                    box-shadow: none;
+                    border-radius: 100px;
+                    background: #f0bc12;
+                    outline: none;
+                  }
+                  
+                  input[type="color" i] {
+                    border-radius: 4px;
+                    border: none;
+                    height: 30px;
+                    width: 50px;
+                    display: block;
+                  }
+            }
+        }
+    
+        .legend-save {
+    
+            label {
+                margin: 10px 0;
+                display: block;
+            }
+    
+            .legend-save-size {
+                .legend-save-size-content {
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+        
+                    input {
+                        -webkit-appearance: none;  /* Override default CSS styles */
+                        appearance: none;
+                        outline: none;
+                        border: none;
+                        border-bottom: 1px solid white;
+                        background-color: transparent;
+                        color: $color-secondary;
+                        font-size: 0.8em;
+                        width: 50px;
+                        margin-right: 20px;
+                    }
+                }
+            }
+    
+            .legend-save-crop {
+                margin: 30px 0;
+    
+                label {
+                    display: inline-block;
+                    margin-right: 20px;
+                }
+    
+                input {
+                    outline: none;
+                    border: none;
+                    background-color: $color-secondary;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 3px;
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -228,5 +238,118 @@
             font-size: 1em;
             height: 50px !important;
         }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .legend-container {
+
+        button {
+            font-size: 1em;
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .legend-container {
+        flex-direction: row;
+
+        .gooey-intensity {
+            width: 30%;
+        }
+
+        .inputs-container {
+            width: 65%;
+            margin: 0;
+            padding: 0 20px;
+            margin-left: 5%;
+            display: flex;
+            align-items: center;
+
+            .legend-menu {
+                flex-direction: column;
+                width: 15%;
+                text-align: center;
+            }
+
+            .legend-add, .legend-edit, .legend-save {
+                width: 85%;
+
+                .legend-add-container, .legend-edit-container, .legend-save-container {
+                    width: 100%;
+                    justify-content: space-around;
+                    display: flex;
+                    align-items: center;
+
+                    .edit-buttons-container {
+                        display: flex;
+                        flex-direction: column;
+                        width: 25%;
+
+                        button {
+                            font-size: 0.6em;
+                            margin: 5px 0;
+                        }
+                    }
+                }
+
+                .legend-save-container {
+                    button {
+                        width: 25%;
+                        font-size: 0.6em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .legend-container {
+        flex-direction: column;
+        overflow: visible;
+
+        &>div {
+            margin-bottom: 20px;
+            width: 100% !important;
+            margin-left: 0 !important;
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .legend-container {
+
+        .inputs-container {
+            flex-direction: column;
+
+            .legend-menu {
+                flex-direction: row;
+                width: 100%;
+            }
+
+            .legend-add, .legend-edit, .legend-save {
+                .legend-add-container, .legend-edit-container, .legend-save-container {
+                    flex-direction: column;
+                    align-items: normal;
+                }
+            }
+
+            button {
+                width: 100% !important;
+                margin-bottom: 20px;
+                font-size: 0.8em !important;
+            }
+
+            .edit-buttons-container {
+                width: 100% !important;
+                padding-bottom: 20px;
+                font-size: 0.8em !important;
+            }
+        }
+
     }
 }

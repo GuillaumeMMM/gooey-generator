@@ -18,19 +18,21 @@ class Legend extends Component {
                 <div className="gooey-intensity">
                     <Input value={this.props.gooeyIntensity} onChange={this.handleChangeAdd.bind(this, 'gooeyIntensity')} type="range" min={0} max={50} label="Gooey Intensity"></Input>
                 </div>
-                <ul className="legend-menu">
-                    <li onClick={() => this.props.changeMode('add')} className={this.props.mode === 'add' ? 'active' : ''}>Add</li>
-                    <li onClick={() => this.props.changeMode('edit')} className={this.props.mode === 'edit' ? 'active' : ''}>Edit</li>
-                    <li onClick={() => this.props.changeMode('save')} className={this.props.mode === 'save' ? 'active' : ''}>Save</li>
-                </ul>
-                <div style={this.props.mode === 'add' ? {display: 'block'} : {display: 'none'}} className="legend-add">
-                    <LegendAdd addValues={this.props.addValues} handleChange={this.handleChangeAdd}></LegendAdd>
-                </div>
-                <div style={this.props.mode === 'edit' ? {display: 'block'} : {display: 'none'}} className="legend-edit">
-                    <LegendEdit editValues={this.props.editValues} handleChangeEdit={this.handleChangeEdit}></LegendEdit>
-                </div>
-                <div style={this.props.mode === 'save' ? {display: 'block'} : {display: 'none'}} className="legend-save">
-                    <LegendSave squareSize={this.state.squareSize} cropToFit={this.state.cropToFit} handleChangeSave={this.handleChangeSave} save={this.save}></LegendSave>
+                <div className="inputs-container">
+                    <ul className="legend-menu">
+                        <li onClick={() => this.props.changeMode('add')} className={this.props.mode === 'add' ? 'active' : ''}>Add</li>
+                        <li onClick={() => this.props.changeMode('edit')} className={this.props.mode === 'edit' ? 'active' : ''}>Edit</li>
+                        <li onClick={() => this.props.changeMode('save')} className={this.props.mode === 'save' ? 'active' : ''}>Save</li>
+                    </ul>
+                    <div style={this.props.mode === 'add' ? {display: 'block'} : {display: 'none'}} className="legend-add">
+                        <LegendAdd addValues={this.props.addValues} handleChange={this.handleChangeAdd}></LegendAdd>
+                    </div>
+                    <div style={this.props.mode === 'edit' ? {display: 'block'} : {display: 'none'}} className="legend-edit">
+                        <LegendEdit editValues={this.props.editValues} handleChangeEdit={this.handleChangeEdit}></LegendEdit>
+                    </div>
+                    <div style={this.props.mode === 'save' ? {display: 'block'} : {display: 'none'}} className="legend-save">
+                        <LegendSave squareSize={this.state.squareSize} cropToFit={this.state.cropToFit} handleChangeSave={this.handleChangeSave} save={this.save}></LegendSave>
+                    </div>
                 </div>
             </div>
         );

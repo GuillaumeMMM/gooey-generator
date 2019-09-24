@@ -44,17 +44,16 @@ class Drawing extends Component {
         svg.on('mousemove', () => {
             /* console.log(this.state.draggedElementId) */
             if (this.state.draggedElementId) {
-                /* console.log('move'); */
                 if (this.props.mode === 'edit') {
                     svg.selectAll('#form-' + this.state.draggedElementId)
                     .attr('cx', d3.event.pageX - document.getElementById('main-svg').getBoundingClientRect().x)
-                    .attr('cy', d3.event.pageY - document.getElementById('main-svg').getBoundingClientRect().y)
+                    .attr('cy', d3.event.pageY - document.getElementById('main-svg').getBoundingClientRect().y - window.scrollY)
                 }
             }
             if (this.props.mode === 'add') {
                 overlayGroup.select('circle')   
                     .attr('cx', d3.event.pageX - document.getElementById('main-svg').getBoundingClientRect().x)
-                    .attr('cy', d3.event.pageY - document.getElementById('main-svg').getBoundingClientRect().y)
+                    .attr('cy', d3.event.pageY - document.getElementById('main-svg').getBoundingClientRect().y - window.scrollY)
             }
         })
 
@@ -70,7 +69,7 @@ class Drawing extends Component {
             if (this.props.mode === 'add') {
                 overlayGroup.append('circle')
                 .attr('cx', d3.event.pageX - document.getElementById('main-svg').getBoundingClientRect().x)
-                .attr('cy', d3.event.pageY - document.getElementById('main-svg').getBoundingClientRect().y)
+                .attr('cy', d3.event.pageY - document.getElementById('main-svg').getBoundingClientRect().y - window.scrollY)
                 .attr('r', this.props.addValues.addRadius + 'px')
                 .attr('opacity', 0.3).attr('stroke', 'blue');
             }
@@ -85,7 +84,7 @@ class Drawing extends Component {
 
     appendElement = (elm, posX, posY) => {
         let xAjusted = posX - document.getElementById('main-svg').getBoundingClientRect().x;
-        let yAjusted = posY - document.getElementById('main-svg').getBoundingClientRect().y;
+        let yAjusted = posY - document.getElementById('main-svg').getBoundingClientRect().y - window.scrollY;
         console.log(xAjusted, yAjusted);
 
         const index = this.state.elements.length === 0 ? 0 : Number(this.state.elements[this.state.elements.length - 1].attr('id').split('form-')[1]) + 1;
