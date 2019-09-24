@@ -1,0 +1,232 @@
+.legend-container {
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px;
+    background-color: $color-tertiary;
+    color: white;
+    border-radius: 7px;
+    -webkit-box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
+    -moz-box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
+    box-shadow: 0px 1px 0px 2px rgba(239,239,239,1);
+    padding: 30px;
+    overflow: scroll;
+
+    button {
+        width: 60%;
+        margin: 10px 0;
+        margin-left: 20%;
+        height: 30px;
+        border: 2px solid $color-primary;
+        background-color: transparent;
+        color: $color-primary;
+        font-family: $font-text;
+        font-weight: 800;
+        text-transform: lowercase;
+        font-size: 0.8em;
+        border-radius: 3px;
+        cursor: pointer;
+
+        &:hover {
+            border: 3px solid $color-primary;
+        }
+    }
+
+    .gooey-intensity {
+        width: 100%;
+
+        label {
+            margin: 10px 0;
+            display: block;
+        }
+        .input-content {
+            margin: 10px 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            input {
+                height: 3px;
+                border-radius: 5px;
+                -webkit-appearance: none;  /* Override default CSS styles */
+                appearance: none;
+                outline: none;
+                background-color: $color-primary;
+                flex: 1;
+    
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%; 
+                    border: 2px solid $color-primary;
+                    background-color: $color-tertiary;
+                    cursor: pointer;
+                  }
+                  
+                  &::-moz-range-thumb {
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    border: 2px solid $color-primary;
+                    background: $color-tertiary;
+                    cursor: pointer;
+                  }
+            }
+
+            .value {
+                flex: 0.25;
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .legend-menu {
+        width: 100%;
+        padding: 10px 0;
+        margin: 40px 0;
+        display: flex;
+        justify-content: flex-start;
+        color: $color-text-secondary;
+
+        li {
+            cursor: pointer;
+            list-style: none;
+            display: inline-block;
+            padding: 2px 5px;
+            margin: 0 5px;
+
+            &.active {
+                color: white;
+                border: 1px solid $color-primary;
+                border-radius: 3px;
+            }
+        }
+    }
+
+    .legend-add, .legend-edit, .legend-save {
+        width: 100%;
+    }
+
+    .legend-add, .legend-edit {
+
+        label {
+            margin: 10px 0;
+            display: block;
+        }
+
+        .add-color-picker, .edit-color-picker {
+            margin: 30px 0;
+            input {
+                cursor: pointer;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border: none;
+                background: none;
+            }
+
+            input[type="color"]:first-child {
+                padding: 0;
+                margin: 0;
+                border: none;
+                box-shadow: none;
+                border-radius: 100px;
+                background: none;
+              }
+              
+              input[type="color"]::-webkit-color-swatch-wrapper {
+                padding: 0;
+              }
+              
+              input[type="color"]::-webkit-color-swatch {
+                border: 2px solid white;
+                border-radius:4px;
+              }
+              
+              input[type="color"]:nth-child(2) {
+                padding: 0;
+                margin: 0;
+                border: none;
+                box-shadow: none;
+                border-radius: 100px;
+                background: #f0bc12;
+                outline: none;
+              }
+              
+              input[type="color" i] {
+                border-radius: 4px;
+                border: none;
+                height: 30px;
+                width: 50px;
+                display: block;
+              }
+        }
+    }
+
+    .legend-save {
+
+        label {
+            margin: 10px 0;
+            display: block;
+        }
+
+        .legend-save-size {
+            .legend-save-size-content {
+                display: flex;
+                width: 100%;
+                align-items: center;
+    
+                input {
+                    -webkit-appearance: none;  /* Override default CSS styles */
+                    appearance: none;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    background-color: transparent;
+                    color: $color-secondary;
+                    font-size: 0.8em;
+                    width: 50px;
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        .legend-save-crop {
+            margin: 30px 0;
+
+            label {
+                display: inline-block;
+                margin-right: 20px;
+            }
+
+            input {
+                outline: none;
+                border: none;
+                background-color: $color-secondary;
+                width: 15px;
+                height: 15px;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .legend-container {
+        font-size: 1.7em;
+
+        .legend-menu {
+            font-size: 1.2em;
+        }
+
+        button {
+            font-size: 1em;
+            height: 50px !important;
+        }
+    }
+}

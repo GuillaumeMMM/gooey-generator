@@ -1,0 +1,24 @@
+@import './variables';
+@import './content.scss';
+@import './drawing.scss';
+@import './legend.scss';
+@import './header.scss';
+@import './input.scss';
+@import './footer.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-text;
+  background-color: $color-primary;
+
+  h1 {
+    font-family: $font-text;
+    font-weight: 800;
+    font-size: 1.5em;
+  }
+}
